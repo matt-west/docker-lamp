@@ -3,7 +3,7 @@ fauria/lamp
 
 ![docker_logo](https://raw.githubusercontent.com/fauria/docker-lamp/master/docker_139x115.png)![docker_fauria_logo](https://raw.githubusercontent.com/fauria/docker-lamp/master/docker_fauria_161x115.png)
 
-This Docker container implements a last generation LAMP stack with a set of popular PHP modules. Includes support for [Composer](https://getcomposer.org/), [Bower](http://bower.io/) and [npm](https://www.npmjs.com/) package managers and a Postfix service to allow sending emails through PHP [mail()](http://php.net/manual/en/function.mail.php) function.
+This Docker container implements a last generation LAMP stack with a set of popular PHP modules. Includes support for [Composer](https://getcomposer.org/) and [npm](https://www.npmjs.com/) package managers and a Postfix service to allow sending emails through PHP [mail()](http://php.net/manual/en/function.mail.php) function.
 
 If you dont need support for MySQL/MariaDB, or your app runs on PHP 5.4, maybe [fauria/lap](https://hub.docker.com/r/fauria/lamp) suits your needs better.
 
@@ -33,6 +33,7 @@ Includes the following components:
 	* php-ldap
 	* php-mcrypt
 	* php-mysql
+  * php-mbstring
 	* php-odbc
 	* php-opcache
 	* php-pgsql
@@ -50,7 +51,6 @@ Includes the following components:
 	* git
 	* composer
 	* npm / nodejs
-	* bower
 	* vim
 	* tree
 	* nano

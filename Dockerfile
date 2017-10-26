@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Fer Uria <fauria@gmail.com>
+MAINTAINER Matt West <hello@mattwest.io>
 LABEL Description="Cutting-edge LAMP stack, based on Ubuntu 16.04 LTS. Includes .htaccess support and popular PHP7 features, including composer and mail() function." \
 	License="Apache License 2.0" \
 	Usage="docker run -d -p [HOST WWW PORT NUMBER]:80 -p [HOST DB PORT NUMBER]:3306 -v [HOST WWW DOCUMENT ROOT]:/var/www/html -v [HOST DB DOCUMENT ROOT]:/var/lib/mysql fauria/lamp" \
@@ -30,6 +30,7 @@ RUN apt-get install -y \
 	php7.0-ldap \
 	php7.0-mcrypt \
 	php7.0-mysql \
+	php7.0-mbstring \
 	php7.0-odbc \
 	php7.0-opcache \
 	php7.0-pgsql \
@@ -42,12 +43,14 @@ RUN apt-get install -y \
 	php7.0-sybase \
 	php7.0-tidy \
 	php7.0-xmlrpc \
-	php7.0-xsl
+	php7.0-xsl \
+	php7.0-imagick
+RUN apt-get install php-imagick
 RUN apt-get install apache2 libapache2-mod-php7.0 -y
 RUN apt-get install mariadb-common mariadb-server mariadb-client -y
 RUN apt-get install postfix -y
 RUN apt-get install git nodejs npm composer nano tree vim curl ftp -y
-RUN npm install -g bower grunt-cli gulp
+RUN npm install -g gulp
 
 ENV LOG_STDOUT **Boolean**
 ENV LOG_STDERR **Boolean**
